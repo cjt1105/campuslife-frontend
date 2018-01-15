@@ -15,7 +15,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
-env_vars.js
+./src/actions/api.js
+./src/actions/generate-cloudinary-request.js
 
 npm-debug.log*
 yarn-debug.log*
