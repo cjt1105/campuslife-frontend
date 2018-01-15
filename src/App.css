@@ -1,0 +1,253 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background: #e3e6e7
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+html,body {padding:0; margin:0;}
+
+.calendar {
+  width: 85%;
+}
+
+.calendar-container {
+  height: 37.5vh;
+  width: 42vw;
+  display: inline-block;
+  float: right;
+  background: white;
+  border-radius: 1.5%
+}
+
+.navbar {
+  width: 100%;
+  height: 75px;
+  background: #85e1d5;
+  display: block;
+  border: 1px solid black
+}
+
+.nav-links-container {
+  float: left
+}
+
+.user-calendar {
+  /*display: block;
+  width: 100%;
+  height: 30vh;*/
+}
+
+.content {
+  padding-right: 5vw;
+  padding-left: 5vw;
+  padding-top: 2vh;
+}
+
+/*.user-lectures {
+  width: 100%;
+}*/
+
+.user-details {
+  background: white;
+  height: 37.5vh;
+  width: 35vw;
+  float: left;
+  border-radius: 1.5%;
+  overflow: hidden;
+  display: flex;
+}
+.post-container {
+  width: 48vw;
+  display: inline-block;
+  background: white;
+  height: 70vh;
+  float: left;
+  margin-top: 25px
+}
+
+.sidebar {
+  float: left;
+  height: 113vh;
+  width: 15vw;
+  background: #8cb1ff;
+  margin-right: 2.5vh;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+
+.rbc-calendar{
+  height: 30vh;
+
+}
+
+.add-assignment-button {
+  float: left;
+  float: top;
+  width: 3vw;
+  height: 3vh;
+  background: #8cb1ff;
+  border-radius: 5%;
+  padding-top: 4px;
+  margin-bottom: 10px;
+}
+
+.calendar-header {
+  width: 100%;
+  display: block;
+  height: 4vh
+}
+
+.edit-user-details-button {
+  float: left;
+  display: inline-block;
+  width: 3vw;
+  height: 3vh;
+  background: #8cb1ff;
+  border-radius: 5%;
+  color: white;
+  font-size: 15px;
+  cursor: default;
+  padding-top: 3px
+}
+
+.lecture-type-select {
+  margin-left: 30px
+}
+
+.text-input {
+  background: #e3e6e7;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 3%
+}
+
+.edit-user-modal {
+  width: 80vw
+}
+
+.input-grey {
+  background: #e3e6e7;
+}
+
+.user-details-element {
+  background: #e3e6e7;
+  margin: 5px;
+  width: 100%
+}
+
+.notes-container {
+  height: 50vh;
+  width: 25vw;
+  display: inline-block;
+  float: right;
+  background: white;
+  border-radius: 1.5%;
+  margin-top: 25px;
+}
+
+.file-upload-button {
+  width: 3vw;
+  padding-top: 2px;
+  height: 3vh;
+  background: #8cb1ff;
+  border-radius: 5%;
+}
+
+.upload-photo {
+  height: 3vh;
+  width: 3vw;
+  background: #85e1d5;
+  border-radius: 5%;
+  margin-top: 1vh;
+  margin-left: 1vw
+}
+
+.user-details-card-container {
+  margin-top: 25px
+}
+
+.google-places-search {
+  display: block;
+  margin-top: 5vh;
+  background: #8cb1ff;
+  width: 22vw;
+  height: 80vh
+}
+
+.google-map-modal {
+  background: #85e1d5;
+  padding-right: 5vw
+}
+
+.lecture-autosuggest{
+  background: red;
+  width: 22vw;
+  display: inline-block;
+  height: 45vh
+}
+
+.lecture-form{
+  background: blue;
+  width: 25vw;
+  display: inline-block;
+  height: 50vh
+}
+.submit-residence-button {
+  float: right
+}
+
+.sidebar-content {
+  background: #85e1d5;
+  width: 90%;
+  margin-left: 5%;
+  height: 27vh;
+  border-radius: 5%;
+  overflow: scroll
+}
+.
+
+.sidebar-button {
+  width: 10%;
+  margin-left: 45%
+}
+
+
+.input-icon {
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  width: 25px
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@import url('../node_modules/react-big-calendar/lib/css/react-big-calendar.css')
