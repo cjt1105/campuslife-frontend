@@ -16,7 +16,7 @@ export default class UserLectureList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="sidebar-container">
                 <div className="sidebar-header">
                     Lectures
                 </div>

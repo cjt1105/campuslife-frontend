@@ -6,15 +6,16 @@ import Dialog, {
     DialogTitle,
 } from 'material-ui/Dialog';
 import Input, { InputLabel } from 'material-ui/Input';
-import Button from 'material-ui/Button';
+// import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 import Select from 'material-ui/Select';
 import { MenuItem }from 'material-ui/Menu';
 import Tooltip from 'material-ui/Tooltip';
 import { FormControl } from 'material-ui/Form';
-import Icon from 'material-ui/Icon';
 import Slide from 'material-ui/transitions/Slide';
 import LectureList from './lecture-list-all'
+
+import { Icon, Image, Button, Header, Grid } from 'semantic-ui-react'
 
 console
 function Transition(props) {
@@ -100,12 +101,7 @@ export default class CreateLectureModal extends Component {
             <div>
             <Tooltip id="add-lecture-button" title="Add a lecture" placement="right">
                     <div className="sidebar-button" onClick={this.handleOpen}>
-                    <Icon
-                    color="contrast"
-                    onClick={this.handleOpen}
-                    >
-                        add_circle_outline
-                    </Icon>
+                    <Icon name='plus' />
                     </div>
                 </Tooltip>
                 <Dialog

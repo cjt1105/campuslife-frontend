@@ -25,7 +25,11 @@ export default class NoteDetailsModal extends Component {
     }
 
     submit = () => {
-        this.props.lectureSelection(this.state)
+        const body = {
+            lecture: parseInt(this.state.lectureId),
+            description: this.state.description
+        }
+        this.props.lectureSelection(body)
     }
 
     handleChange = name => event => {
@@ -77,6 +81,13 @@ export default class NoteDetailsModal extends Component {
                                             <option></option>
                                             {this.renderLectureSelectMenu()}
                                         </Select>
+                                        <TextField
+                                        name="description"
+                                        type="text"
+                                        label="Description"
+                                        onChange={this.handleChange('description')}
+                                        value={this.state.description}
+                                        />
                                     </FormControl>
                                     <Tooltip title="What lecture should we tag these notes to?" placement="right">
                                         <div className="input-icon">

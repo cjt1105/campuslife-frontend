@@ -18,12 +18,6 @@ class NotesContainer extends Component {
         this.props.getUserNotes(0)
     }
 
-    componentWillUpdate(nextProps, nextState){
-        if(nextState.file != null && nextState.lecture != null) {
-            this.props.postNote(nextState, this.props.user.id)
-        }
-    }
-
     fileUploadSuccess= (file) => {
         this.setState({
             open: true,
@@ -32,10 +26,13 @@ class NotesContainer extends Component {
     }
 
     lectureSelection = (newState) => {
-        this.setState({
-            lecture: newState.lectureId,
-            open: false
-        })
+        const noteObject = {
+            file: this.state.file,
+            lecture: newState.lecture,
+            description: newState.description
+        }
+        this.setState({open: false})
+        this.props.postNote(noteObject, this.props.user.id)
     }
 
     render() {

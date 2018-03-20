@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import Button from 'material-ui/Button';
 import { GoogleMap,withGoogleMap, Marker, withScriptjs } from "react-google-maps"
+import { Route } from 'react-router-dom'
 import { compose, withProps } from "recompose"
+import { withRouter } from 'react-router-dom';
 const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 let residencesState = null
 
-export default class MapContainer extends Component {
+class MapContainer extends Component {
     state = {
         selectedPlace : {
             name: null
@@ -19,7 +21,7 @@ export default class MapContainer extends Component {
     renderMapComponent = (markers) => {
       this.MyMapComponent = compose(
       withProps({
-      googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDVEJZ3jlRLbqrSzghaYJfdg9WEcNFfJrM",
       loadingElement: <div style={{ height: `100%`, width: '100%' }} />,
       containerElement: <div style={{ height: `70vh`, width: '70vw', float: 'right' }} />,
       mapElement: <div style={{ height: `100%`, width: '100%' }} />,
@@ -47,11 +49,21 @@ export default class MapContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.getAllResidences()
+    console.log(this.props)
+    this.props.getAllResidences();
+     if(this.props.residences.length > 0 && this.markersLoaded === false){
+      residencesState = Object.assign({}, this.props.residences)
+      this.renderMarkers(residencesState)
+      .then((markers) => {
+        this.renderMapComponent(markers)
+      })
+        this.markersLoaded = true;
+      }
   }
 
   onMarkerClick = (residence) => {
-    this.props.selectResidence(residence)
+    // this.props.clearResidenceState()
+    // this.props.history.push(`/residences/${residence.id}`)
   }
 
   setMarkerState = (state) => {
@@ -75,17 +87,7 @@ export default class MapContainer extends Component {
     stateArray.map((el, index) => {
       markers.push(
       <Marker key = {el.id} clickable={true} onClick={this.onMarkerClick.bind(this, el)} position={{ lat: el.lat, lng: el.lng }}>
-        {el.open && <InfoBox
-        draggable={true}
-        key={el.id}
-        options={{ closeBoxURL: ``, enableEventPropagation: true }}
-      >
-        <div style={{ backgroundColor: `orange`, opacity: 0.75 }}>
-          <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-            {el.name.split(',')[0]}
-          </div>
-        </div>
-      </InfoBox >}
+        {el.open}
       </Marker>
         )
     })
@@ -99,14 +101,6 @@ export default class MapContainer extends Component {
   }
 
   componentDidUpdate() {
-    if(this.props.residences.length > 0 && this.markersLoaded === false){
-      residencesState = Object.assign({}, this.props.residences)
-      this.renderMarkers(residencesState)
-      .then((markers) => {
-        this.renderMapComponent(markers)
-      })
-        this.markersLoaded = true;
-      }
   }
 
   submit= (event) => {
@@ -128,6 +122,7 @@ export default class MapContainer extends Component {
   }
 
 render() {
+    console.log(this.props)
     const inputProps = {
       value: this.state.address,
       onChange: this.onChange,
@@ -155,10 +150,10 @@ render() {
         </div>
         <div className="google-places-search">
         <form onSubmit={this.handleFormSubmit}>
-          {/*<PlacesAutocomplete inputProps={inputProps} styles={myStyles} />
+          <PlacesAutocomplete inputProps={inputProps} styles={myStyles} />
           <Button classes={{root: 'submit-residence-button'}} onClick={this.submit}>
               Submit
-          </Button>*/}
+          </Button>
         </form>
         </div>
       </div>
@@ -167,3 +162,5 @@ render() {
    return null
   }
 }
+
+export default withRouter(MapContainer)

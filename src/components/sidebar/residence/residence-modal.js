@@ -10,16 +10,11 @@ import Button from 'material-ui/Button';
 export default class ResidenceModal extends Component {
 
     state = {
-        residenceLoaded: false
+
     }
 
     componentDidUpdate = () => {
-        if('name' in this.props.residence){
-            console.log('found')
-        }
-        if(Object.getPrototypeOf(this.props.residence).pop != undefined && this.props.selectedResidence != null){
-            this.props.getSingleResidence(this.props.selectedResidence.id)
-        }
+        console.log("heyheyhey", this.props)
     }
 
 

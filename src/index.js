@@ -8,6 +8,7 @@ import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router';
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
 import App from './App';
+import './semantic/semantic.json'
 
 const history = createHistory();
 const middleware = routerMiddleware(history)

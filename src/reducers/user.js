@@ -6,7 +6,6 @@ export default function(state=null, action){
         case LOAD_USER:
             return action.payload
         case EDIT_USER_DETAILS:
-            console.log(action)
             return action.payload
         default:
             return state

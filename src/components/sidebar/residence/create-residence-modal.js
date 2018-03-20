@@ -38,6 +38,7 @@ export default class CreateLectureModal extends Component {
     }
 
     handleClose = () => {
+        this.props.clearResidenceState(null)
         this.setState({open: false})
     }
 
@@ -57,7 +58,8 @@ export default class CreateLectureModal extends Component {
             user: this.props.user,
             getAllResidences: this.props.getAllResidences,
             residences: this.props.residences,
-            selectResidence: this.selectResidence
+            selectResidence: this.selectResidence,
+            clearResidenceState: this.props.clearResidenceState
         })
     }
 

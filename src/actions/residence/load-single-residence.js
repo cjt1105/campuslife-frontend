@@ -6,7 +6,6 @@ export default function getSingleResidence(residenceId) {
     return dispatch => {
         return axios.get(`${api}/residences/${residenceId}`)
         .then(res => {
-            console.log(res.data)
             dispatch(dispatchSingleResidenceAsync(res.data))
         })
     }

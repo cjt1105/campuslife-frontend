@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <div className="nav-links-container">
         <ul>
-            < NavLink activeClassName='active' to="/"> Home </NavLink>
+            <NavLink activeClassName='active' to="/"> Home </NavLink>
             <NavLink activeClassName='active' to="/dashboard"> Dashboard </NavLink>
         </ul>
         </div>
