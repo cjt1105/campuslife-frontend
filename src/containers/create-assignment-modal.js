@@ -80,10 +80,7 @@ class CreateAssignmentModal extends React.Component {
     };
 
     render() {
-        return React.Children.map(this.props.children, child => {
-                return React.cloneElement(child, {...this.props, ...this.state})
-            })
-
+        return null
         // return (
         //     <div>
         //         <Tooltip id="add-assignment-tooltip" title="Add an assignment" placement="top">

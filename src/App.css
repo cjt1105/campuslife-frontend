@@ -2,15 +2,6 @@
   text-align: center;
 }
 
-body {
-  background: #e3e6e7
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -26,27 +17,53 @@ body {
   font-size: large;
 }
 
-html,body {padding:0; margin:0;}
+
+html, body {
+    overflow: scroll;
+    overflow-x: hidden;
+    padding:0; 
+    margin:0;
+    background: white
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 
 .calendar {
   width: 85%;
 }
 
+
 .calendar-container {
-  height: 37.5vh;
+  height: 45vh;
   width: 42vw;
-  display: inline-block;
   float: right;
-  background: white;
-  border-radius: 1.5%
+  background: #62C9EC;
+  border-radius: 1.5%;
+  padding: 1vh 1vw 1vh 1vw;
+}
+
+.dashboard-calendar-container {
+  height: 35vh;
+  width: 35vw;
+  float: left;
+  background: #62C9EC;
+  border-radius: 1.5%;
+  padding: 1vh 1vw 1vh 1vw;
+  margin-top: 2vh
 }
 
 .navbar {
   width: 100%;
   height: 75px;
-  background: #85e1d5;
+  background: #62C9EC;
   display: block;
-  border: 1px solid black
 }
 
 .nav-links-container {
@@ -70,37 +87,79 @@ html,body {padding:0; margin:0;}
 }*/
 
 .user-details {
-  background: white;
-  height: 37.5vh;
-  width: 35vw;
+  background: #62C9EC;
+  height: 50vh;
+  width: 79vw;
   float: left;
   border-radius: 1.5%;
   overflow: hidden;
   display: flex;
-}
-.post-container {
-  width: 48vw;
-  display: inline-block;
-  background: white;
-  height: 70vh;
-  float: left;
-  margin-top: 25px
+  padding: 1vh 1vw 1vh 1vw;
+  margin-right: 2vw
 }
 
+.lecture-details {
+  background: #62C9EC;
+  width: 35vw;
+  height: 12vh;
+  border-radius: 1%;
+  padding: 1vh 1vw 1vh 1vw;
+  float: left;
+}
+
+.post-container {
+  width: 42vw;
+  background: #62C9EC;
+  height: 80vh;
+  float: left;
+  /*margin-top: 2vh;*/
+  padding: 1vh 1vw 1vh 1vw;
+  border-radius: 1.5%;
+
+}
+
+.dashboard-post-container {
+  width: 42vw;
+  background: #62C9EC;
+  height: 80vh;
+  float: left;
+  margin-top: 2vh;
+  padding: 1vh 1vw 1vh 1vw;
+  border-radius: 1.5%;
+  margin-right: 2vw
+}
+
+.lecture-post-container {
+  width: 42vw;
+  background: #62C9EC;
+  height: 80vh;
+  float: left;
+  margin-top: 3vh;
+  padding: 1vh 1vw 1vh 1vw;
+  border-radius: 1.5%;
+
+}
+
+.user-social-link-header{
+  color: red;
+  background: #8cb1ff;
+}
 .sidebar {
   float: left;
-  height: 113vh;
+  height: 136vh;
   width: 15vw;
-  background: #8cb1ff;
-  margin-right: 2.5vh;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  background: #62C9EC;
+  padding: .5vh .5vw .5vh .5vw;
 
+}
+
+.user-details-card {
+  width: 100%;
 }
 
 .rbc-calendar{
-  height: 30vh;
+  height: 85%;
+  width: 85%
 
 }
 
@@ -109,7 +168,7 @@ html,body {padding:0; margin:0;}
   float: top;
   width: 3vw;
   height: 3vh;
-  background: #8cb1ff;
+  background: #85e1d5;
   border-radius: 5%;
   padding-top: 4px;
   margin-bottom: 10px;
@@ -121,12 +180,28 @@ html,body {padding:0; margin:0;}
   height: 4vh
 }
 
+.container-backdrop{
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5%;
+  overflow: hidden
+}
+
+.sidebar-backdrop {
+  background: #110F71;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5%;
+  overflow: hidden
+}
+
 .edit-user-details-button {
   float: left;
   display: inline-block;
   width: 3vw;
   height: 3vh;
-  background: #8cb1ff;
+  background: #85e1d5;
   border-radius: 5%;
   color: white;
   font-size: 15px;
@@ -155,37 +230,46 @@ html,body {padding:0; margin:0;}
   background: #e3e6e7;
 }
 
-.user-details-element {
+/* .user-details-element {
   background: #e3e6e7;
   margin: 5px;
   width: 100%
-}
+} */
 
 .notes-container {
   height: 50vh;
   width: 25vw;
-  display: inline-block;
   float: right;
-  background: white;
+  background: #62C9EC;
   border-radius: 1.5%;
-  margin-top: 25px;
+  margin-left: 3vw;
+  padding: 1vh 1vw 1vh 1vw;
+}
+
+.dashboard-notes-container {
+  height: 43vh;
+  width: 35vw;
+  float: left;
+  background: #62C9EC;
+  border-radius: 1.5%;
+  padding: 1vh 1vw 1vh 1vw;
+  margin-top: 2vh
 }
 
 .file-upload-button {
   width: 3vw;
   padding-top: 2px;
   height: 3vh;
-  background: #8cb1ff;
+  background: #85e1d5;
   border-radius: 5%;
 }
 
-.upload-photo {
-  height: 3vh;
-  width: 3vw;
+.ui.button {
+  background: initial;
+}
+
+.upload-photo-button {
   background: #85e1d5;
-  border-radius: 5%;
-  margin-top: 1vh;
-  margin-left: 1vw
 }
 
 .user-details-card-container {
@@ -198,6 +282,60 @@ html,body {padding:0; margin:0;}
   background: #8cb1ff;
   width: 22vw;
   height: 80vh
+}
+
+.dashboard-container {
+  width: 85vw;
+  height: 135vh;
+  background: white;
+  display: inline-block;
+  padding: 2vh 1vw 1vh 1vw;
+  border-top: 5px solid #62C9EC
+}
+
+.dashboard-backdrop {
+  background: #110F71;
+  height: 137vh;
+  width: 100%;
+  padding: 3vh 2vw 3vh 2vw;
+  border-radius: 1.5%
+}
+
+.student-card {
+  background: #110F71;
+  height: 100%;
+  color: white;
+  padding: 1vh .5vw 1vh .5vw;
+  border-radius: 1.5%;
+}
+
+.student-backdrop{
+  background: #62C9EC;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5%;
+  overflow: hidden
+}
+
+.lecture-notes-container{
+  background: #62C9EC;
+  width: 35vw;
+  height: 30vh;
+  margin-top: 3vh;
+  /* margin-bottom: 2vh; */
+  border-radius: 1.5%;
+  padding: 1vh 1vw 1vh 1vw;
+  float: left;
+}
+
+.students-container {
+  background: #62C9EC;
+  width: 35vw;
+  height: 70vh;
+  margin-top: 3vh;
+  border-radius: 1.5%;
+  padding: 1vh 1vw 1vh 1vw;
+  float: right;
 }
 
 .google-map-modal {
@@ -223,14 +361,21 @@ html,body {padding:0; margin:0;}
 }
 
 .sidebar-content {
-  background: #85e1d5;
+  background: white;
   width: 90%;
   margin-left: 5%;
-  height: 27vh;
+  height: 30vh;
   border-radius: 5%;
-  overflow: scroll
 }
-.
+
+.sidebar-residence {
+  background: white;
+  width: 90%;
+  margin-left: 5%;
+  height: 5vh;
+  border-radius: 5%;
+  color: white
+}
 
 .sidebar-button {
   width: 10%;

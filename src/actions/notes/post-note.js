@@ -6,15 +6,19 @@ import { generateCloudinaryUploadRequest } from '../generate-cloudinary-request'
 export default function postNote(noteObject, userId) {
     console.log(noteObject)
     return dispatch => {
+        const lectureId = parseInt(noteObject.lecture)
+        const description = noteObject.description
         const requestObject = generateCloudinaryUploadRequest(noteObject.file)
         const url = requestObject.url
         const formData = requestObject.form_data
+        console.log('heyeheyhe', lectureId, description)
         axios.post(url, formData)
         .then(res => {
             const data = res.data
             const requestBody = {
                 url: data.secure_url,
-                timestamp: data.created_at
+                timestamp: data.created_at,
+                description: noteObject.description
             }
 
             axios.post(`${api}/notes`, requestBody)

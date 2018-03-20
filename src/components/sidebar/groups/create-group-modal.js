@@ -16,6 +16,7 @@ import Icon from 'material-ui/Icon';
 import Slide from 'material-ui/transitions/Slide';
 import GroupList from './group-list-all'
 
+
 function Transition(props) {
     return <Slide direction="up" {...props} />;
 }

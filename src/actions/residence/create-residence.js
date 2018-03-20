@@ -1,7 +1,6 @@
 import { CREATE_RESIDENCE } from '../types';
 import axios from 'axios';
 import api from '../api';
-import { dates } from '../calendar/date-helpers'
 
 export default function createResidence(residenceName, residenceLatLng, userId) {
     const residence = {

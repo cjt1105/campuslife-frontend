@@ -42,11 +42,13 @@ function formatAssignment(assignment) {
 export default class CreateAssignmentModal extends Component {
     state = {
         open: false,
-        dueDate: " ",
-        type: " ",
-        description: " ",
-        lectureId: " "
     };
+
+    getIntialState = () => {
+        return {
+            open: false
+        }
+    }
 
     renderLectureSelectMenu = () => {
         return this.props.user_lectures.map((lecture) => {
@@ -67,11 +69,11 @@ export default class CreateAssignmentModal extends Component {
     };
 
     submitAssignment = () => {
-        this.setState({open: false});
         const lectureId = parseInt(this.state.lectureId)
         const assignment = formatAssignment({...this.state});
-        const trimmedAssignment = trimWhitespace(Object.entries(assignment))
-        this.props.createAssignment(trimmedAssignment, lectureId)
+        delete assignment.open
+        this.props.createAssignment(assignment, lectureId)
+        this.setState(this.getIntialState());
     };
 
     render() {
@@ -121,17 +123,13 @@ export default class CreateAssignmentModal extends Component {
                             <div>
                                 <FormControl className="input-grey">
                                     <TextField
-        id="time"
-        label="Alarm clock"
-        type="time"
-        defaultValue="07:30"
-        InputLabelProps={{
-          shrink: true,
-        }}
-        inputProps={{
-          step: 300, // 5 min
-        }}
-      />
+                                    label="Due date"
+                                    margin="dense"
+                                    id="dueDate"
+                                    type="date"
+                                    value={this.state.dueDate}
+                                    onChange={this.handleChange('dueDate')}
+                                    />
                                 </FormControl>
                             </div>
                             <br />
@@ -167,7 +165,7 @@ export default class CreateAssignmentModal extends Component {
                         <Button onClick={this.handleRequestClose} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={this.ssubmitAssignment} color="primary">
+                        <Button onClick={this.submitAssignment} color="primary">
                             Submit
                         </Button>
                     </DialogActions>
